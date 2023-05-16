@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ProductModel>
+@{
+	ViewData["Title"] = "Products";
+}
+<div class="container">
+	<h1 class="h1Product"><strong>New</strong></h1>
+	<br />
+@foreach (var item in Model.Where(x => x.Tag == "New"))
+{
+	<div class="container mb-5">
+		<h3><strong>Name:</strong> @item.ProductName</h3>
+			<h4><strong>Price:</strong> @item.Price.ToString("0.0")$</h4>
+		<img class="product-image" src="@item.ImageUrl" alt="img">
+		<a asp-controller="Product" asp-action="Details" asp-route-id="@item.ProductId" class="btn-theme m-5">Details</a>
+	</div>
+}
+	<hr style="font-weight: bold; height:5px; background-color:black;">
+</div>
+
+<div class="container">
+	<h1 class="h1Product"<strong>Popular</strong></h1>
+	<br />
+	@foreach (var item in Model.Where(x => x.Tag == "Popular"))
+	{
+		<div class="container mb-5">
+			<h3><strong>Name:</strong> @item.ProductName</h3>
+			<h4><strong>Price:</strong> @item.Price.ToString("0.0")$</h4>
+			<img class="product-image" src="@item.ImageUrl" alt="img">
+			<a asp-controller="Product" asp-action="Details" asp-route-id="@item.ProductId" class="btn-theme m-5">Details</a>
+		</div>
+	}
+	<hr style="font-weight: bold; height:5px; background-color:black;">
+</div>
+
+<div class="container">
+	<h1 class="h1Product"><strong>Featured</strong></h1>
+	<br />
+	@foreach (var item in Model.Where(x => x.Tag == "Featured"))
+	{
+		<div class="container mb-5">
+			<h3><strong>Name:</strong> @item.ProductName</h3>
+			<h4><strong>Price:</strong> @item.Price.ToString("0.0")$</h4>
+			<img class="product-image" src="@item.ImageUrl" alt="img">
+			<a asp-controller="Product" asp-action="Details" asp-route-id="@item.ProductId" class="btn-theme m-5">Details</a>
+		</div>
+	}
+	<hr style="font-weight: bold; height:5px; background-color:black;">
+</div>

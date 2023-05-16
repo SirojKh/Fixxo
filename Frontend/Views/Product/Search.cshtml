@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ProductModel>
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<div class="container mb-5">
+    <div class="d-flex justify-content-center">
+        <form method="get">
+            <input name="searchTerm" placeholder="Search product" />
+            <br />
+            <br />
+            <button asp-controller="Product" asp-action="Search" type="submit" class="btn btn-theme mb-5">Search</button>
+        </form>
+    </div>
+
+
+    @foreach (var item in Model)
+    {
+        <div class="container mb-5">
+            <div class="justify-content-center">
+
+                <h3><strong>Name:</strong> @item.ProductName</h3>
+                <p><strong>Description:</strong> @item.Description</p>
+                <p><strong>Price:</strong> @item.Price</p>
+                <p><strong>Tag:</strong> @item.Tag</p>
+                <img class="product-image" src="@item.ImageUrl" alt="img">
+                <hr style="font-weight: bold; height:5px; background-color:black;">
+
+            </div>
+        </div>
+
+
+    }
+
+    <div class="container mb-4">
+        <a class="btn-theme" asp-action="Index">Back to List</a>
+    </div>
+
+</div>

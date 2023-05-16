@@ -1,0 +1,24 @@
+﻿@model IEnumerable<ProductModel>
+
+<section class="best-collection">
+	<div class="container">
+		<h1 class="collection-title">Best Collection</h1>
+		<div class="row">
+			@if (Model?.Any() == true)
+			{
+				<div class="col-lg-6 col-md-12">
+					@foreach (var item in Model.Take(2))
+					{
+						<partial name="/Views/Shared/Partials/_CollectionItemPartial.cshtml" model="item" />
+					}
+				</div>
+				<div class="col-lg-6 col-md-12">
+					@foreach (var item in Model.Skip(2).Take(2))
+					{
+						<partial name="/Views/Shared/Partials/_CollectionItemPartial.cshtml" model="item" />
+					}
+				</div>
+			}
+		</div>
+	</div>
+</section>

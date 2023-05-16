@@ -1,0 +1,27 @@
+﻿@model ProductModel
+
+<div class="container mb-5">
+    <h4>Details</h4>
+    <hr />
+
+    <h2><strong>Name:</strong> @Model.ProductName</h2>
+    <h5><strong>Description:</strong> @Model.Description</h5>
+    <h5><strong>Price:</strong> @Model.Price.ToString("0.0")</h5>
+
+    @*<div class="star-rating">
+        @for (int i = 1; i <= 5; i++)
+        {
+            var solid = i <= Model.StarRating ? "fa-solid" : "fa-regular";
+            <i class="fa fa-star @solid"></i>
+        }
+    </div>*@
+
+    <h5><strong>Tag:</strong> @Model.Tag</h5>
+    <img class="product-image" src="@Model.ImageUrl" alt="img">
+    <hr style="font-weight: bold; height:5px; background-color:black;">
+
+</div>
+
+<div class="container mb-4">
+    <a class="btn-theme" asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,31 @@
+﻿@model ProductModel
+
+@if (Model != null)
+{
+	<div class="item mb-5">
+		<div class="body-section">
+			<h5 class="category">@Model.Tag</h5>
+			<h3 class="name"><strong>@Model.ProductName</strong></h3>
+
+			@*<div class="star-rating">
+				@for (int i = 1; i <= 5; i++)
+				{
+					var solid = i <= Model.StarRating ? "fa-solid" : "fa-regular";
+					<i class="fa fa-star @solid"></i>
+				}
+			</div>*@
+
+			<div class="price"><strong>@Model.Price.ToString("0.0")$</strong></div>
+
+		</div>
+
+			<div class="image-section mb-4">
+				<img src="@Model.ImageUrl" alt="img" class="product-image" />
+				<div class="menu">
+					<a asp-controller="Product" asp-action="Details" asp-route-id="@Model.ProductId" class="btn-theme">QUICK VIEW</a>
+				</div>
+			</div>
+
+	</div>
+
+}

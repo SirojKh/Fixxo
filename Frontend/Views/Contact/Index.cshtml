@@ -1,0 +1,35 @@
+﻿@model ContactModel
+
+<section class="breadcrumb">
+	<div class="container">
+		<div class="content">
+			<h1>CONTACT</h1>
+		</div>
+	</div>
+</section>
+
+<section class="google-maps">
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.846379992451!2d18.021943310261673!3d59.34492585222009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d9d263b022d%3A0x82fc0f30ed84f9ed!2sNackademin!5e0!3m2!1ssv!2sse!4v1679451477145!5m2!1ssv!2sse" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section></section>
+
+<div class="container mb-5">
+	<div class="col-md-10 mx-auto col-lg-5">
+		<form method="post" action="/Contact/Send">
+			<h2>Contact us!</h2>
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="form-floating mb-3">
+				<input asp-for=" Email " class="form-control" />
+				<label for="floatingInput" asp-for="Email" class="form-label"></label>
+				<small><span asp-validation-for="Email" class="text-danger"></span></small>
+
+			</div>
+			<div class="form-floating mb-3">
+				<textarea asp-for="Message" class="form-control" style="height: 250px;"></textarea>
+				<label for="floatingInput" asp-for="Message" class="form-label"></label>
+				<small><span asp-validation-for="Message" class="text-danger"></span></small>
+
+			</div>
+			<button class="w-100 btn btn-lg btn-primary btn-theme" type="submit">Send</button>
+		</form>
+	</div>
+</div>
